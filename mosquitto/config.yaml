@@ -14,7 +14,7 @@ arch:
 auth_api: true
 discovery:
   - mqtt
-image: sophiefox/hass-mqtt-test-{arch}
+image: skapershik/hass-mqtt-test-{arch}
 map:
   - ssl
   - share
