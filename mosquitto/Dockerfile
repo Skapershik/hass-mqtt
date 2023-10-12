@@ -76,6 +76,6 @@ RUN apt-get update \
 	/root/go
 
 # Copy rootfs
-COPY rootfs .
+COPY rootfs /
 
 WORKDIR /
