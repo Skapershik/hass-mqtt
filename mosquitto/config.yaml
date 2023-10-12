@@ -1,5 +1,5 @@
 ---
-version: 6.3.1
+version: manifest-aarch64
 slug: mosquitto-test
 name: Mosquitto broker (test)
 description: An Open Source MQTT broker
@@ -14,7 +14,7 @@ arch:
 auth_api: true
 discovery:
   - mqtt
-image: skapershik/test:manifest-aarch64
+image: skapershik/test
 map:
   - ssl
   - share
