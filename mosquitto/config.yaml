@@ -14,7 +14,7 @@ arch:
 auth_api: true
 discovery:
   - mqtt
-image: skapershik/test
+image: skapershik/test:manifest-aarch64
 map:
   - ssl
   - share
