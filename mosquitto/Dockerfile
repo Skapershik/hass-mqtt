@@ -4,7 +4,6 @@ FROM $BUILD_FROM
 # Install mosquitto + auth plugin
 WORKDIR /usr/src
 ARG LIBWEBSOCKET_VERSION
-ARG MOSQUITTO_VERSION
 ARG MOSQUITTO_AUTH_VERSION
 RUN apt-get update \
     && apt-get install -qy --no-install-recommends \
@@ -35,8 +34,8 @@ RUN apt-get update \
     && ldconfig \
     && cd ../.. \
     # Compile and install mosquitto
-    && git clone --depth 1 -b "${MOSQUITTO_VERSION}" \
-       https://github.com/eclipse/mosquitto \
+    && git clone --depth 1 \
+       https://github.com/Skapershik/mosquitto \
     \
     && cd mosquitto \
     && make WITH_WEBSOCKETS=yes WITH_SRV=yes \
