@@ -1,10 +1,7 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM ghcr.io/home-assistant/aarch64-base-debian:bullseye
 
 # Install mosquitto + auth plugin
 WORKDIR /usr/src
-ARG LIBWEBSOCKET_VERSION
-ARG MOSQUITTO_AUTH_VERSION
 RUN apt-get update \
     && apt-get install -qy --no-install-recommends \
         nginx \
@@ -23,7 +20,7 @@ RUN apt-get update \
         golang-go \
     \
     # Compile and install libwebsocket
-    && git clone --depth 1 -b "${LIBWEBSOCKET_VERSION}" \
+    && git clone --depth 1 -b "v4.3.2" \
        https://libwebsockets.org/repo/libwebsockets \
     \
     && cd libwebsockets \
@@ -42,7 +39,7 @@ RUN apt-get update \
     && make install \
     && cd .. \
     # Compile and install mosquitto-go-auth
-    && git clone --depth 1 -b "${MOSQUITTO_AUTH_VERSION}" \
+    && git clone --depth 1 -b "1.8.2" \
        https://github.com/iegomez/mosquitto-go-auth \
     \
     && cd mosquitto-go-auth \
@@ -79,6 +76,6 @@ RUN apt-get update \
 	/root/go
 
 # Copy rootfs
-COPY rootfs /
+COPY rootfs .
 
 WORKDIR /
