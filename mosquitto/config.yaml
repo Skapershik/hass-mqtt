@@ -14,7 +14,7 @@ arch:
 auth_api: true
 discovery:
   - mqtt
-image: homeassistant/{arch}-addon-mosquitto
+image: sophiefox/hass-mqtt-test-{arch}
 map:
   - ssl
   - share
