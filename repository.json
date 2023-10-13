@@ -1,5 +1,5 @@
 {
-  "name": "Mosquitto (test)",
+  "name": "Mosquitto (custom build)",
   "url": "https://github.com/Skapershik/hass-mqtt",
   "maintainer": "@Skapershik"
 }

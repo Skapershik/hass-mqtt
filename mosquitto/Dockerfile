@@ -1,4 +1,4 @@
-FROM ghcr.io/home-assistant/aarch64-base-debian:bullseye
+FROM ghcr.io/home-assistant/armhf-base-debian:bullseye
 
 # Install mosquitto + auth plugin
 WORKDIR /usr/src
