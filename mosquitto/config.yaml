@@ -20,7 +20,6 @@ map:
   - share
 options:
   logins: []
-  anonymous: false
   require_certificate: false
   certfile: fullchain.pem
   keyfile: privkey.pem
@@ -37,7 +36,6 @@ schema:
     - username: str
       password: password
       password_pre_hashed: "bool?"
-  anonymous: bool
   require_certificate: bool
   certfile: str
   cafile: str?

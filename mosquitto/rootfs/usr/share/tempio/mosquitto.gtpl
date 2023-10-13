@@ -39,11 +39,6 @@ auth_opt_http_aclcheck_uri /acl
 include_dir /share/{{ .customize_folder }}
 {{ end }}
 
-{{ if .anonymous }}
-allow_anonymous true
-{{ else }}
-allow_anonymous false
-{{ end }}
 
 listener 1883
 protocol mqtt
